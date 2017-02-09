@@ -1,0 +1,168 @@
+/************************************
+  CSS made by Le Hoang Dinh Nguyen
+************************************/
+
+/********************
+    General CSS
+********************/
+body{
+  background-image: url('images/back.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+#nav{
+  display: inline-flex;
+  justify-content: space-around;
+  background-color: black;
+  font-family: myFont;
+  color: #e8c268;
+  width: 100%;
+}
+h1, h2, h3, h4{
+  margin-top: 5px;
+  color: #e8c268;
+  text-shadow: 2px 2px black;
+}
+#menuCollapse{
+  display: none;
+}
+ul,ol{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+li{
+  display: inline-block;
+  margin-right: 25px;
+  font-weight: bolder;
+}
+
+li img{
+  height: 35px;
+  width: auto;
+}
+a{
+  color: #e8c268;
+}
+a:hover{
+  text-decoration: none;
+  color: #d6c088;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  font-family: myFont;
+}
+footer p{
+  margin-top: 10px;
+  text-align: center;
+  color: #e8c268;
+}
+#content{
+  margin-top: -5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 90vh;
+  color: white;
+}
+#content h1{
+  padding-top: 15px;
+}
+#content #text{
+  padding-top: 50px;
+}
+#content p{
+  background-color: rgba(78, 196, 229, 0.5);
+  color: white;
+  border-radius: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.formulaire{
+  background-color: rgba(78, 196, 229, 0.5);
+  border-radius: 15px;
+  margin-top: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.btn-primary{
+  background-color: #e8c268;
+}
+.btn-primary:hover{
+  background-color: #a6e54e;
+}
+.btn-link{
+  color: #e8c268;
+}
+.btn-link:hover{
+  color: #a6e54e;
+  text-decoration: none;
+}
+/********************
+    product
+********************/
+#contentProduct{
+  margin-top: -5px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  color: white;
+}
+#product{
+  background-color: rgba(78, 196, 229, 0.5);
+  border-radius: 15px;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+#product img{
+  height: 70px;
+  width: auto;
+}
+#info{
+  display:none;
+  z-index: 2;
+  position: absolute;
+  text-align: left;
+  top:30%;
+  left: 30%;
+  background-color: rgba(78, 196, 229, 0.9);
+  height: 250px;
+  width: 400px;
+}
+/********************
+    Media Query
+********************/
+@font-face {
+  font-family: myFont;
+  src: url(Strange Tales.ttf);
+}
+@media (min-width: 1200px){
+  #contentProduct{
+    margin-top: -5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 90vh;
+    color: white;
+  }
+  #product{
+    background-color: rgba(78, 196, 229, 0.5);
+    border-radius: 15px;
+    margin-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+}
+@media (max-width: 600px){
+    #menu{
+      display:none;
+    }
+    #menuCollapse{
+      display: block;
+    }
+}
