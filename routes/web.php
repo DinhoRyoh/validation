@@ -14,7 +14,8 @@
 Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/product', 'ProductController@index');
-Route::get('/contact', 'ContactController@index');
-Route::get('/message', 'ContactController@index');
-Route::get('/cart', 'CartController@index');
+Route::get('/contact', 'ContactController@index')->middleware('auth');
+Route::post('/contact/new', 'ContactController@createOne');
+Route::get('/message', 'MessageController@index')->middleware('auth');
+Route::get('/cart', 'CartController@index');->middleware('auth');
 Route::get('/logout', 'Auth\LoginController@logout');

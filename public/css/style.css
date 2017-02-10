@@ -178,6 +178,28 @@ footer p{
   background-color: none;
 }
 /********************
+       contact
+********************/
+#contact{
+  margin-top: 50px;
+  background-color: rgba(78, 196, 229, 0.3);
+  border-radius: 15px;
+}
+#labelName{
+  padding-top: 25px;
+}
+#name,#message{
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+#submit{
+  padding: 10px 100px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+/********************
     Media Query
 ********************/
 @font-face {

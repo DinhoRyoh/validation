@@ -27,8 +27,10 @@
                 @if(Auth::check() && Auth::user()->admin == 1)
                   <li><a href="message">Messages</a></li>
                 @else
+                  @if(Auth::check() && Auth::user()->admin == 0)
                   <li><a href="contact">Contact</a></li>
                   <li><a href="cart">Cart</a></li>
+                  @endif
                 @endif
                 @if(Auth::check())
                   <li><a href="logout">Logout</a></li>
