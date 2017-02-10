@@ -38,3 +38,27 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## More Informations for Morgan Corroyer
+
+I hope that you noticed that Included my own readMe to the laravel readMe.
+the Project can be founded here : [click here](http://it-akademy.slides.com/morgan_corroyer/val-cared?token=Cjwmen4k#/1).
+I'll explain the main facts:
+The CARED class had to create an application/website to build an "webshopsite"
+
+So I used laravel, it was requested.
+There is a contact page: so I used the Collective laravel FORM.
+My theme was League of Legends, I used an API to get all the existing champions,
+you can find the API here:[Just click here](https://developer.riotgames.com/).
+So yeah, We can't modify or delete the content, but I found it more useful to have big content
+I added a function to the APP, a cart/wishlist for the common user(not the admin), he can access to it, and modify it.
+the User also can send message to the admin using the contact form, see the code to see how it works.
+
+in the other hand, the Admin can access to a view which permit to see all the mails/messages, and he can delete them.
+
+To create different type of Users, I added a column named "admin" which contain 1 if the user is admin or 0 for the common user.
+
+Now for the design...yeah I added "on purpose" difficulties for viewing all the champions... the main difficulty was the responsive layout.
+It was the first time with JS.
+
+I hope that I detailed all the most important things, Have a good day !

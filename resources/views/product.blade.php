@@ -4,6 +4,7 @@
   <div class="container" id="contentProduct">
     <h1>Products</h1>
     <div class="container" id="product">
+      {{-- this will be filled by the js file 'product' --}}
       <table id="list">
 
       </table>

@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  // This is the main js using LOL API, to obtain all the existing champions, view their profile picture, and we can add them to the cart/wishlist
+
   f404 = function() {
     alert( "Ressource not found" );
   }
@@ -12,6 +14,7 @@ $(document).ready(function() {
         200: function(data) {
           var i = 0;
             $.each(data.data, function(key, value) {
+              //the following if condition are creating the same table, it made for the responsive content, It was the only issues I found in few time
               if ($( window ).width()<=450) {
                 if (i == 0) {
                   $("#list").append("<tr>&shy;");
@@ -75,6 +78,7 @@ $(document).ready(function() {
   });
   }
   init();
+  //pop up to see the price the picture and the title of the champion, adding or cancel the choice
   $("body").on("click",".champion",function(){
     var id = $(this).attr("data-id");
     var name;
