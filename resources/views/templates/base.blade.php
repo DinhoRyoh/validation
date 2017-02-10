@@ -28,6 +28,7 @@
                   <li><a href="message">Messages</a></li>
                 @else
                   <li><a href="contact">Contact</a></li>
+                  <li><a href="cart">Cart</a></li>
                 @endif
                 @if(Auth::check())
                   <li><a href="logout">Logout</a></li>
@@ -47,6 +48,7 @@
                   <li><a href="message"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                 @else
                   <li><a href="contact"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                  <li><a href="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                 @endif
                 @if(Auth::check())
                   <li><a href="logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>

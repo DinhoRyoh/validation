@@ -12,7 +12,7 @@ $(document).ready(function() {
         200: function(data) {
           var i = 0;
             $.each(data.data, function(key, value) {
-              if ($( window ).width()<=400) {
+              if ($( window ).width()<=450) {
                 if (i == 0) {
                   $("#list").append("<tr>&shy;");
                 }
@@ -22,6 +22,8 @@ $(document).ready(function() {
                   $("#list").append("&shy;</tr>");
                   i = 0;
                 }
+                $('.space2').show();
+
               } else if ($( window ).width()<=700) {
                 if (i == 0) {
                   $("#list").append("<tr>&shy;");
@@ -32,6 +34,8 @@ $(document).ready(function() {
                   $("#list").append("&shy;</tr>");
                   i = 0;
                 }
+                $('.space').show();
+
               } else if ($( window ).width()<=1000) {
                 if (i == 0) {
                   $("#list").append("<tr>&shy;");
@@ -42,6 +46,7 @@ $(document).ready(function() {
                   $("#list").append("&shy;</tr>");
                   i = 0;
                 }
+                $('.space').show();
               } else if ($( window ).width()<=1200) {
                 if (i == 0) {
                   $("#list").append("<tr>&shy;");
@@ -72,6 +77,9 @@ $(document).ready(function() {
   init();
   $("body").on("click",".champion",function(){
     var id = $(this).attr("data-id");
+    var name;
+    var title;
+    var price;
     $.ajax({
         method: "GET",
         async: false,
@@ -79,14 +87,19 @@ $(document).ready(function() {
         statusCode: {
             404: f404,
             200: function(data) {
-              console.log(data);
               var img = $('<img>').attr({
                 src: "http://ddragon.leagueoflegends.com/cdn/7.3.1/img/champion/"+data.image.full,
                 title: "champion",
-                alt:""
+                style:"padding-left:15px;padding-top:15px;"
               });
+              name = data.name;
+              title = data.title;
+              price = data.stats.hp;
               $('#info').append(img);
-              $('#info').append("&nbsp;&nbsp;&nbsp;&nbsp;"+data.name+" "+data.title+"<br>");
+              $('#info').append("&nbsp;&nbsp;&nbsp;&nbsp;"+name+" "+title+"<br>");
+              $('#info').append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price : "+price+" €<br>");
+              var add =$('<button>').attr({id:"add"}).html("add");
+              $('#info').append(add);
               var button =$('<button>').attr({id:"exit"}).html("exit");
               $('#info').append(button);
             }
@@ -97,9 +110,31 @@ $(document).ready(function() {
         $('#info').html("");
         $('#info').hide();
       });
-//       $('#info').attr({
-//   style:"display:inline-flex; justify-content:flex-start;"
-// });
+      // Add Product to a cart(localstorage)
+      $('body').on("click","#add",function(){
+        if (localStorage.getItem("cart") == null) {
+          var array = [{
+            name: name,
+            title: title,
+            price: price
+          }];
+          var storage = JSON.stringify(array);
+          localStorage.setItem('cart', storage);
+        } else {
+          var array = {
+            name: name,
+            title: title,
+            price: price
+          };
+          var storage = JSON.parse(localStorage.getItem('cart'));
+          localStorage.removeItem('cart');
+          storage.push(array);
+          var newArray = JSON.stringify(storage);
+          localStorage.setItem('cart', newArray);
+        }
+        $('#info').html("");
+        $('#info').hide();
+      });
       $('#info').show();
 
   });

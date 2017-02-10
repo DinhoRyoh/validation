@@ -12,5 +12,7 @@
 
     </div>
   </div>
+   <div class="space" style="height:51px;"></div>{{-- to make some space when needed, entirely CSS --}}
+   <div class="space2" style="height:70px;"></div>{{-- to make some space when needed, entirely CSS --}}
   <script type="text/javascript" src="{{asset('js/product.js')}}"></script>
 @endsection
