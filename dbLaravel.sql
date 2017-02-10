@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author` varchar(45) DEFAULT NULL,
-  `message` varchar(45) NOT NULL,
+  `message` mediumtext NOT NULL,
   `subject` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
@@ -67,7 +67,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'bob@gmail.com','Bob','$2y$10$s/hnAqlV5BqheLscraMDg.Z/8HtW8qvJiLKCFuufMOyStJjECMoF.','2017-02-09 14:03:34','2017-02-09 14:03:34','kG1LMMyrrNopSKhLAaY9herAsbxPcabExZ8HEONWIybsSwTcG4Q10ujDdxTj',1),(2,'bobby@hotmail.fr','Bobby','$2y$10$dTFaMVs8rAwo7Vi/zVsWGuqkbzeNGc/tToJ3kOz44uwOLdMxDRIpO','2017-02-09 14:07:28','2017-02-09 14:07:28','akGSzRjxTSf7bf4bB81J6spmx7hoJqR7RGFe9D4GS5dvYd5270aaQIRICseX',0);
+INSERT INTO `users` VALUES (1,'bob@gmail.com','Bob','$2y$10$s/hnAqlV5BqheLscraMDg.Z/8HtW8qvJiLKCFuufMOyStJjECMoF.','2017-02-09 14:03:34','2017-02-09 14:03:34','Ulnda4m5JImSmzFsX0kdQKs3UzpuSmDyk0ASHdVAZKpclb06D2ORxinloC38',1),(2,'bobby@hotmail.fr','Bobby','$2y$10$dTFaMVs8rAwo7Vi/zVsWGuqkbzeNGc/tToJ3kOz44uwOLdMxDRIpO','2017-02-09 14:07:28','2017-02-09 14:07:28','akGSzRjxTSf7bf4bB81J6spmx7hoJqR7RGFe9D4GS5dvYd5270aaQIRICseX',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -80,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-10 14:59:09
+-- Dump completed on 2017-02-10 15:27:55
